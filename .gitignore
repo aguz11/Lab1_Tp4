@@ -26,6 +26,7 @@ replay_pid*
 /dist/
 # !name del directorio ignora el directorio y sus archivos
 !nbproject/
+/nbproject/private
 *.properties
 *.xml
-/nbproject/private
+
