@@ -3,8 +3,7 @@
 
 # Log file
 *.log
-*.xml
-*.properties
+
 # BlueJ files
 *.ctxt
 
@@ -19,8 +18,7 @@
 *.zip
 *.tar.gz
 *.rar
-*.xml
-*.properties
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
@@ -28,3 +26,5 @@ replay_pid*
 /dist/
 # !name del directorio ignora el directorio y sus archivos
 !nbproject/
+*.properties
+*.xml
