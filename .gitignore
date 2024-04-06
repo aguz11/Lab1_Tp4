@@ -1,3 +1,7 @@
+**/*..properties
+/nbproject/private
+*.xml
+
 # Compiled class file
 *.class
 
@@ -24,9 +28,5 @@ hs_err_pid*
 replay_pid*
 /build/
 /dist/
-# !name del directorio ignora el directorio y sus archivos
-!nbproject/
-/nbproject/private
-*.properties
-*.xml
+
 
