@@ -26,9 +26,5 @@ hs_err_pid*
 replay_pid*
 /build/
 /dist/
-nbproject/
-nbproject/private/
-
-/nbproject
-nbproject/project.properties
-
+# !name del directorio ignora el directorio y sus archivos
+!nbproject/
