@@ -4,6 +4,8 @@
  */
 package controlador;
 
+import vista.VistaConvertidor;
+
 /**
  *
  * @author agus1
@@ -14,7 +16,9 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        VistaConvertidor vc=new VistaConvertidor();
+        vc.setLocationRelativeTo(null);
+        vc.setVisible(true);
     }
     
 }
