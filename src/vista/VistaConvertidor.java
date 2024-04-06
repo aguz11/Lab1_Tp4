@@ -50,7 +50,7 @@ public class VistaConvertidor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPnlContenedor.setBackground(new java.awt.Color(255, 255, 255));
+        jPnlContenedor.setBackground(new java.awt.Color(0, 0, 0));
         jPnlContenedor.setBorder(javax.swing.BorderFactory.createTitledBorder("Convertidor de Cº a Fº"));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -118,7 +118,7 @@ public class VistaConvertidor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTxtgradosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtgradosKeyTyped
-      controlador.ContrConvertidor.eventoTxtGradosSoloNumeros(evt);
+        controlador.ContrConvertidor.eventoTxtGradosSoloNumeros(evt);
     }//GEN-LAST:event_jTxtgradosKeyTyped
 
     /**
