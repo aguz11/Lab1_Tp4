@@ -16,9 +16,10 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        VistaConvertidor vc=new VistaConvertidor();
-        vc.setLocationRelativeTo(null);
+        VistaConvertidor vc = new VistaConvertidor();
         vc.setVisible(true);
+        vc.setLocationRelativeTo(null);
+
     }
-    
+
 }
