@@ -52,7 +52,6 @@ public class VistaConvertidor extends javax.swing.JFrame {
         setResizable(false);
 
         jPnlContenedor.setBackground(new java.awt.Color(0, 0, 0));
-        jPnlContenedor.setBorder(javax.swing.BorderFactory.createTitledBorder(null));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -80,7 +79,7 @@ public class VistaConvertidor extends javax.swing.JFrame {
         jPnlContenedor.setLayout(jPnlContenedorLayout);
         jPnlContenedorLayout.setHorizontalGroup(
             jPnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
             .addGroup(jPnlContenedorLayout.createSequentialGroup()
                 .addGap(151, 151, 151)
                 .addComponent(jCbxCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -93,7 +92,7 @@ public class VistaConvertidor extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jCbxCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
