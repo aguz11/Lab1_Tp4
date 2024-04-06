@@ -4,6 +4,9 @@
  */
 package vista;
 
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author agus1
@@ -60,6 +63,11 @@ public class VistaConvertidor extends javax.swing.JFrame {
         jTxtgrados.setBorder(null);
         jTxtgrados.setCaretColor(new java.awt.Color(0, 153, 0));
         jTxtgrados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtgrados.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTxtgradosKeyTyped(evt);
+            }
+        });
         jPanel1.add(jTxtgrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 110, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imgs/dial1 (Personalizado) (1).png"))); // NOI18N
@@ -109,6 +117,10 @@ public class VistaConvertidor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTxtgradosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtgradosKeyTyped
+      controlador.ContrConvertidor.eventoTxtGradosSoloNumeros(evt);
+    }//GEN-LAST:event_jTxtgradosKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -152,4 +164,13 @@ public class VistaConvertidor extends javax.swing.JFrame {
     private javax.swing.JPanel jPnlContenedor;
     private javax.swing.JTextField jTxtgrados;
     // End of variables declaration//GEN-END:variables
+
+    public JComboBox<String> getjCbxCambio() {
+        return jCbxCambio;
+    }
+
+    public JTextField getjTxtgrados() {
+        return jTxtgrados;
+    }
+    
 }
