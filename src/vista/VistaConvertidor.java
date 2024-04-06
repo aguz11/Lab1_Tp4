@@ -73,7 +73,7 @@ public class VistaConvertidor extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imgs/dial1 (Personalizado) (1).png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 390));
 
-        jCbxCambio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione para Convertir" }));
+        jCbxCambio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccionar opcion" }));
 
         javax.swing.GroupLayout jPnlContenedorLayout = new javax.swing.GroupLayout(jPnlContenedor);
         jPnlContenedor.setLayout(jPnlContenedorLayout);
