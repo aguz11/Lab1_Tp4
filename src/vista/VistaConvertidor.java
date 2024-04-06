@@ -18,6 +18,7 @@ public class VistaConvertidor extends javax.swing.JFrame {
      */
     public VistaConvertidor() {
         initComponents();
+        cargarCombo();
     }
 
     /**
@@ -171,6 +172,11 @@ public class VistaConvertidor extends javax.swing.JFrame {
 
     public JTextField getjTxtgrados() {
         return jTxtgrados;
+    }
+    
+    public void cargarCombo() {
+        jCbxCambio.addItem("°C");
+        jCbxCambio.addItem("°F");
     }
     
 }
