@@ -7,7 +7,6 @@ package controlador;
 import vista.VistaConvertidor;
 
 /**
- *
  * @author agus1
  */
 public class ContrConvertidor {
@@ -28,5 +27,5 @@ public class ContrConvertidor {
     }
     
     
-    //fin de la clase
+    //fin de la clase..
 }
