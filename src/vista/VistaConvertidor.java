@@ -170,10 +170,10 @@ public class VistaConvertidor extends javax.swing.JFrame {
     public JTextField getjTxtgrados() {
         return jTxtgrados;
     }
-    
+    //esto no va aca- Controlador
     public void cargarCombo() {
-        jCbxCambio.addItem("°C");
-        jCbxCambio.addItem("°F");
+        jCbxCambio.addItem("°C a ºF");
+        jCbxCambio.addItem("°F a ºC");
     }
     
 }
