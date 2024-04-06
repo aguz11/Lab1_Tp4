@@ -76,7 +76,7 @@ public class VistaConvertidor extends javax.swing.JFrame {
 
         jCbxCambio.setBackground(new java.awt.Color(255, 255, 255));
         jCbxCambio.setForeground(new java.awt.Color(0, 0, 0));
-        jCbxCambio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione para Convertir" }));
+        jCbxCambio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "°C", "°F" }));
 
         javax.swing.GroupLayout jPnlContenedorLayout = new javax.swing.GroupLayout(jPnlContenedor);
         jPnlContenedor.setLayout(jPnlContenedorLayout);
