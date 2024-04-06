@@ -14,7 +14,7 @@ public class ContrConvertidor {
     
     
      public static void CargarInstancia(VistaConvertidor vc) {
-        //pensar? :-)
+        //pensar? :-) hola mundo
       
     }
     
