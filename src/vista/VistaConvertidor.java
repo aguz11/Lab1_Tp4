@@ -172,8 +172,8 @@ public class VistaConvertidor extends javax.swing.JFrame {
     }
     //esto no va aca- Controlador
     public void cargarCombo() {
-        jCbxCambio.addItem("°C a ºF");
-        jCbxCambio.addItem("°F a ºC");
+       // jCbxCambio.addItem("°C a ºF");
+        //jCbxCambio.addItem("°F a ºC");
     }
     
 }
