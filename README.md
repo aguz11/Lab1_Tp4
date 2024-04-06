@@ -1,3 +1,22 @@
+Limpiar
+Para que tome los cambios realizados en el .gitignore realiza lo siquiente:
+
+Realiza commit de cambios pendientes y remueve archivos modificados del indice:
+Comandos
+
+git rm --cached -r .
+guarda cambios:
+
+git add .
+y realiza un commit:
+
+git commit -m ".gitignore funcionando!"
+
+*Esto hay que hacerlo cuando se clona y este todo funcionnado , reseten con esos 3 comandos
+*Esto va a borrar la carpeta nbProyect (pusch) , depues de eso ya no se ba a subir mas nbproyect, 
+Depues la subimos a mano. Me avisan y yo la subo
+
+____________________________________________
 Para tener en cuenta de errores
 
 Archivo -> project.properties 
