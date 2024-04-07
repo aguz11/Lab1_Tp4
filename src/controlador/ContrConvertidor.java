@@ -4,28 +4,48 @@
  */
 package controlador;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 import vista.VistaConvertidor;
 
 /**
  * @author agus1
  */
 public class ContrConvertidor {
-    
-    
-     public static void CargarInstancia(VistaConvertidor vc) {
-        //pensar? :-) hola mundo
-        //Salute  sapee
-      
+
+    //Se realiza instancia de la vista
+    public static VistaConvertidor vc;
+
+    public static void CargarInstancia(VistaConvertidor v) {
+        vc = v;
     }
-    
-     //Solo numero para el campo grados
+
+    //Se Carga Combo
+    public static void cargarCombo() {
+        vc.getjCbxCambio().addItem("Seleccionar una opción");
+        vc.getjCbxCambio().addItem("°C a °F");
+        vc.getjCbxCambio().addItem("°F a ºC");
+    }
+
+    //Solo numero para el campo grados
     public static void eventoTxtGradosSoloNumeros(java.awt.event.KeyEvent evt) {
         char c = evt.getKeyChar();
-        if (!Character.isDigit(c) && c != evt.VK_BACK_SPACE && c != evt.VK_DELETE) {
+        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
             evt.consume();
         }
     }
-    
-    
+
+    // convertir
+    public static void Convertir() {
+        double temp = Double.parseDouble(vc.getjTxtgrados().getName());
+        double convTemp = 0.0;
+       
+        if (vc.getjCbxCambio().getSelectedIndex() == 1) {
+            convTemp = (temp * 9 / 5) + 32;
+            JOptionPane.showMessageDialog(vc, convTemp);
+        }
+         System.out.println(temp + convTemp);
+    }
+
     //fin de la clase..
 }

@@ -18,7 +18,9 @@ public class VistaConvertidor extends javax.swing.JFrame {
      */
     public VistaConvertidor() {
         initComponents();
-        cargarCombo();
+        controlador.ContrConvertidor.CargarInstancia(this);
+        controlador.ContrConvertidor.cargarCombo();
+        //controlador.ContrConvertidor.Convertir();
     }
 
     /**
@@ -73,8 +75,6 @@ public class VistaConvertidor extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imgs/dial1 (Personalizado) (1).png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 390));
 
-        jCbxCambio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccionar opcion" }));
-
         javax.swing.GroupLayout jPnlContenedorLayout = new javax.swing.GroupLayout(jPnlContenedor);
         jPnlContenedor.setLayout(jPnlContenedorLayout);
         jPnlContenedorLayout.setHorizontalGroup(
@@ -117,6 +117,7 @@ public class VistaConvertidor extends javax.swing.JFrame {
 
     private void jTxtgradosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtgradosKeyTyped
         controlador.ContrConvertidor.eventoTxtGradosSoloNumeros(evt);
+        
     }//GEN-LAST:event_jTxtgradosKeyTyped
 
     /**
@@ -171,9 +172,6 @@ public class VistaConvertidor extends javax.swing.JFrame {
         return jTxtgrados;
     }
     //esto no va aca- Controlador
-    public void cargarCombo() {
-       // jCbxCambio.addItem("°C a ºF");
-        //jCbxCambio.addItem("°F a ºC");
-    }
+    
     
 }
