@@ -30,21 +30,21 @@ public class ContrConvertidor {
     //Solo numero para el campo grados
     public static void eventoTxtGradosSoloNumeros(java.awt.event.KeyEvent evt) {
         char c = evt.getKeyChar();
-        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE && c != '.') {
             evt.consume();
         }
     }
 
     // convertir
     public static void Convertir() {
-        double temp = Double.parseDouble(vc.getjTxtgrados().getName());
-        double convTemp = 0.0;
-       
-        if (vc.getjCbxCambio().getSelectedIndex() == 1) {
-            convTemp = (temp * 9 / 5) + 32;
-            JOptionPane.showMessageDialog(vc, convTemp);
-        }
-         System.out.println(temp + convTemp);
+        modelo.Convertidor v = new modelo.Convertidor();
+        v.setNum(Double.parseDouble(vc.getjTxtgrados().getText()));
+        
+        //System.out.println(v.getNum());
+        
+        //TODO: Queda hacer la converción y mostrar los JOptionPane
+        //de C a F (temp °C × 9/5) + 32
+        //de F a C (temp °F − 32) × 5/9
     }
 
     //fin de la clase..

@@ -20,7 +20,6 @@ public class VistaConvertidor extends javax.swing.JFrame {
         initComponents();
         controlador.ContrConvertidor.CargarInstancia(this);
         controlador.ContrConvertidor.cargarCombo();
-        //controlador.ContrConvertidor.Convertir();
     }
 
     /**
@@ -65,6 +64,11 @@ public class VistaConvertidor extends javax.swing.JFrame {
         jTxtgrados.setBorder(null);
         jTxtgrados.setCaretColor(new java.awt.Color(0, 153, 0));
         jTxtgrados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTxtgrados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtgradosActionPerformed(evt);
+            }
+        });
         jTxtgrados.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTxtgradosKeyTyped(evt);
@@ -119,6 +123,11 @@ public class VistaConvertidor extends javax.swing.JFrame {
         controlador.ContrConvertidor.eventoTxtGradosSoloNumeros(evt);
         
     }//GEN-LAST:event_jTxtgradosKeyTyped
+
+    private void jTxtgradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtgradosActionPerformed
+        // TODO add your handling code here:
+        controlador.ContrConvertidor.Convertir();
+    }//GEN-LAST:event_jTxtgradosActionPerformed
 
     /**
      * @param args the command line arguments
