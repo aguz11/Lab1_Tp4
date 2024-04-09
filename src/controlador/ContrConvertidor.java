@@ -39,45 +39,57 @@ public class ContrConvertidor {
     // convertir el campo textField 
     public static void Convertir() {
         int comboIndex;
-        double tempConv,userTemp;
-        
+        double tempConv, userTemp;
+        if (vc.getjCbxCambio().getSelectedIndex() > 0) {
+            //Instancia de la clase Convertidor
+            modelo.Convertidor v = new modelo.Convertidor();
 
-        //Instancia de la clase Convertidor
-        modelo.Convertidor v = new modelo.Convertidor();
+            try {
+                String valor = vc.getjTxtgrados().getText();
+                if (!valor.isEmpty()) {
+                    //Se toma el valor del jTxtField y se setea su valor en el atributo 
+                    userTemp = Double.parseDouble(valor);
 
-        try {
+                    v.setNum(userTemp);
 
-            //Se toma el valor del jTxtField y se setea su valor en el atributo 
-            userTemp = Double.parseDouble(vc.getjTxtgrados().getText());
-            
-            v.setNum(userTemp);
-            
-            
-            //TODO: Queda hacer la converción y mostrar los JOptionPane
-            //de C a F (temp °C × 9/5) + 32
-            //de F a C (temp °F − 32) × 5/9
-            //Truncar el valor decimal a tres dígitos
-            DecimalFormat df = new DecimalFormat("#.000");
+                    //TODO: Queda hacer la converción y mostrar los JOptionPane
+                    //de C a F (temp °C × 9/5) + 32
+                    //de F a C (temp °F − 32) × 5/9
+                    //Truncar el valor decimal a tres dígitos
+                    DecimalFormat df = new DecimalFormat("#.000");
 
-            //Se recupera el indice de la selección del combo
-            comboIndex = vc.getjCbxCambio().getSelectedIndex();
+                    //Se recupera el indice de la selección del combo
+                    comboIndex = vc.getjCbxCambio().getSelectedIndex();
 
-            switch (comboIndex) {
+                    switch (comboIndex) {
 
-                case 1 -> {
-                    tempConv = (v.getNum() * 9 / 5) + 32;
-                    JOptionPane.showMessageDialog(vc, "La temperatura convertida es: " + df.format(tempConv) + "°F.");
+                        case 1 -> {
+
+                            tempConv = (v.getNum() * 9 / 5) + 32;
+                            JOptionPane.showMessageDialog(vc, "La temperatura convertida es: " + df.format(tempConv) + "°F.");
+                            break;
+
+                        }
+                        case 2 -> {
+                            tempConv = (v.getNum() - 32) * 5 / 9;
+                            JOptionPane.showMessageDialog(vc, "La temperatura convertida es: " + df.format(tempConv) + "°C.");
+                            break;
+                        }
+
+                    }
+                    resetComboB();
+                } else {
+                    JOptionPane.showMessageDialog(vc, "Debes ingresar un número.");
                 }
-                case 2 -> {
-                    tempConv = (v.getNum() - 32) * 5 / 9;
-                    JOptionPane.showMessageDialog(vc, "La temperatura convertida es: " + df.format(tempConv) + "°C.");
-                }
 
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(vc, "Ocurrio una falla inisperada.");
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(vc, "Debes ingresar un número.");
         }
     }
 
+    private  static void resetComboB(){
+        vc.getjCbxCambio().setSelectedIndex(0);
+    }
 //fin de la clase..
 }
