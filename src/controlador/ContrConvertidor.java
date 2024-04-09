@@ -5,6 +5,7 @@
 package controlador;
 
 import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import vista.VistaConvertidor;
 
@@ -37,14 +38,36 @@ public class ContrConvertidor {
 
     // convertir
     public static void Convertir() {
+        int comboIndex;
+        double tempConv;
+        //Instancia de la clase Convertidor
         modelo.Convertidor v = new modelo.Convertidor();
-        v.setNum(Double.parseDouble(vc.getjTxtgrados().getText()));
         
-        //System.out.println(v.getNum());
+        //Se toma el valor del jTxtField y se setea su valor en el atributo 
+        v.setNum(Double.parseDouble(vc.getjTxtgrados().getText()));
         
         //TODO: Queda hacer la converción y mostrar los JOptionPane
         //de C a F (temp °C × 9/5) + 32
         //de F a C (temp °F − 32) × 5/9
+        //Truncar el valor decimal a tres dígitos
+        DecimalFormat df = new DecimalFormat("#.000");
+        
+        //Se recupera el indice de la selección del combo
+        comboIndex = vc.getjCbxCambio().getSelectedIndex();
+        
+        switch (comboIndex) {
+            case 1 -> {
+                tempConv = (v.getNum()*9/5) + 32;
+                JOptionPane.showMessageDialog(vc, "La temperatura convertida es: "+df.format(tempConv)+"°F.");
+            }
+            case 2 -> {
+                tempConv = (v.getNum()-32) * 5/9;
+                JOptionPane.showMessageDialog(vc, "La temperatura convertida es: "+df.format(tempConv)+"°C.");
+            }
+            default -> {
+                JOptionPane.showMessageDialog(vc, "Debes elegir una opción");
+            }
+        }
     }
 
     //fin de la clase..

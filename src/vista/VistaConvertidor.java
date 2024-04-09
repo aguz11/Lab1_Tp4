@@ -64,11 +64,6 @@ public class VistaConvertidor extends javax.swing.JFrame {
         jTxtgrados.setBorder(null);
         jTxtgrados.setCaretColor(new java.awt.Color(0, 153, 0));
         jTxtgrados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTxtgrados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtgradosActionPerformed(evt);
-            }
-        });
         jTxtgrados.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTxtgradosKeyTyped(evt);
@@ -78,6 +73,12 @@ public class VistaConvertidor extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imgs/dial1 (Personalizado) (1).png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 390));
+
+        jCbxCambio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCbxCambioMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPnlContenedorLayout = new javax.swing.GroupLayout(jPnlContenedor);
         jPnlContenedor.setLayout(jPnlContenedorLayout);
@@ -124,10 +125,10 @@ public class VistaConvertidor extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTxtgradosKeyTyped
 
-    private void jTxtgradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtgradosActionPerformed
+    private void jCbxCambioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCbxCambioMouseClicked
         // TODO add your handling code here:
         controlador.ContrConvertidor.Convertir();
-    }//GEN-LAST:event_jTxtgradosActionPerformed
+    }//GEN-LAST:event_jCbxCambioMouseClicked
 
     /**
      * @param args the command line arguments
