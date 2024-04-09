@@ -33,7 +33,7 @@ public class Convertidor {
     public String toString() {
         return "Convertidor{" + "num=" + num + '}';
     }
-
+    //Método para convertir a centigrados
     public static double convertirCentigrados(double n){
         //Variables a usar
         double convTemp, tempTrunc;
@@ -45,7 +45,7 @@ public class Convertidor {
         tempTrunc = Double.parseDouble(df.format(convTemp));
         return tempTrunc;
     }
-    
+    //Método para convertir a Fahrenheit
     public static double convertirFahrenheit(double n){
         //Variables a usar
         double convTemp, tempTrunc;
