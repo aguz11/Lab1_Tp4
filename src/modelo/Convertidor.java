@@ -4,6 +4,8 @@
  */
 package modelo;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author agus1
@@ -32,7 +34,28 @@ public class Convertidor {
         return "Convertidor{" + "num=" + num + '}';
     }
 
+    public static double convertirCentigrados(double n){
+        //Variables a usar
+        double convTemp, tempTrunc;
+        //Instancia 
+        DecimalFormat df = new DecimalFormat("#.000");
+        //Calculo de temperatura
+        convTemp = ( n *9/5)+32;
+        //Tuncar el decimal a 3 dígitos y parseo a tipo
+        tempTrunc = Double.parseDouble(df.format(convTemp));
+        return tempTrunc;
+    }
     
-    
+    public static double convertirFahrenheit(double n){
+        //Variables a usar
+        double convTemp, tempTrunc;
+        //Instancia 
+        DecimalFormat df = new DecimalFormat("#.000");
+        //Calculo de temperatura
+        convTemp = (n - 32) * 5/9;
+        //Tuncar el decimal a 3 dígitos y parseo a tipo
+        tempTrunc = Double.parseDouble(df.format(convTemp));
+        return tempTrunc;
+    }
 
 }
