@@ -40,33 +40,39 @@ public class ContrConvertidor {
     public static void Convertir() {
         int comboIndex;
         double tempConv;
-        //Instancia de la clase Convertidor
-        modelo.Convertidor v = new modelo.Convertidor();
-        
-        //Se toma el valor del jTxtField y se setea su valor en el atributo 
-        v.setNum(Double.parseDouble(vc.getjTxtgrados().getText()));
-        
-        //TODO: Queda hacer la converción y mostrar los JOptionPane
-        //de C a F (temp °C × 9/5) + 32
-        //de F a C (temp °F − 32) × 5/9
-        //Truncar el valor decimal a tres dígitos
-        DecimalFormat df = new DecimalFormat("#.000");
-        
-        //Se recupera el indice de la selección del combo
-        comboIndex = vc.getjCbxCambio().getSelectedIndex();
-        
-        switch (comboIndex) {
-            case 1 -> {
-                tempConv = (v.getNum()*9/5) + 32;
-                JOptionPane.showMessageDialog(vc, "La temperatura convertida es: "+df.format(tempConv)+"°F.");
+
+        try {
+
+            //Instancia de la clase Convertidor
+            modelo.Convertidor v = new modelo.Convertidor();
+
+            //Se toma el valor del jTxtField y se setea su valor en el atributo 
+            v.setNum(Double.parseDouble(vc.getjTxtgrados().getText()));
+
+            //TODO: Queda hacer la converción y mostrar los JOptionPane
+            //de C a F (temp °C × 9/5) + 32
+            //de F a C (temp °F − 32) × 5/9
+            //Truncar el valor decimal a tres dígitos
+            DecimalFormat df = new DecimalFormat("#.000");
+
+            //Se recupera el indice de la selección del combo
+            comboIndex = vc.getjCbxCambio().getSelectedIndex();
+
+            switch (comboIndex) {
+                case 1 -> {
+                    tempConv = (v.getNum() * 9 / 5) + 32;
+                    JOptionPane.showMessageDialog(vc, "La temperatura convertida es: " + df.format(tempConv) + "°F.");
+                }
+                case 2 -> {
+                    tempConv = (v.getNum() - 32) * 5 / 9;
+                    JOptionPane.showMessageDialog(vc, "La temperatura convertida es: " + df.format(tempConv) + "°C.");
+                }
+                default -> {
+                    JOptionPane.showMessageDialog(vc, "Debes elegir una opción.");
+                }
             }
-            case 2 -> {
-                tempConv = (v.getNum()-32) * 5/9;
-                JOptionPane.showMessageDialog(vc, "La temperatura convertida es: "+df.format(tempConv)+"°C.");
-            }
-            default -> {
-                JOptionPane.showMessageDialog(vc, "Debes elegir una opción");
-            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(vc, "Debes ingresar un número.");
         }
     }
 
