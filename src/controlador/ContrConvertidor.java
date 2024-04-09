@@ -5,12 +5,14 @@
 package controlador;
 
 import java.awt.event.KeyEvent;
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import vista.VistaConvertidor;
 
 /**
  * @author agus1
+ * @author mpirizdutra89
+ * @author DDamien88
+ * @author FerrandoCarlos
  */
 public class ContrConvertidor {
 
@@ -21,14 +23,14 @@ public class ContrConvertidor {
         vc = v;
     }
 
-    //Se Carga Combo
+    //Se Carga jComboBox
     public static void cargarCombo() {
         vc.getjCbxCambio().addItem("Seleccionar una opción");
         vc.getjCbxCambio().addItem("Convertir de °C a °F");
         vc.getjCbxCambio().addItem("Convertir de °F a ºC");
     }
 
-    //Solo numero para el campo grados
+    //Solo números para el campo grados se exceptúa el punto
     public static void eventoTxtGradosSoloNumeros(java.awt.event.KeyEvent evt) {
         char c = evt.getKeyChar();
         if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE && c != '.') {
@@ -74,7 +76,7 @@ public class ContrConvertidor {
             }
         }
     }
-    
+    //Método para resetear el jComboBox
     private static void resetComboB() {
         vc.getjCbxCambio().setSelectedIndex(0);
     }
