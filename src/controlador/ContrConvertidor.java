@@ -24,8 +24,8 @@ public class ContrConvertidor {
     //Se Carga Combo
     public static void cargarCombo() {
         vc.getjCbxCambio().addItem("Seleccionar una opción");
-        vc.getjCbxCambio().addItem("°C a °F");
-        vc.getjCbxCambio().addItem("°F a ºC");
+        vc.getjCbxCambio().addItem("Convertir de °C a °F");
+        vc.getjCbxCambio().addItem("Convertir de °F a ºC");
     }
 
     //Solo numero para el campo grados
@@ -36,19 +36,23 @@ public class ContrConvertidor {
         }
     }
 
-    // convertir
+    // convertir el campo textField 
     public static void Convertir() {
         int comboIndex;
-        double tempConv;
+        double tempConv,userTemp;
+        
+
+        //Instancia de la clase Convertidor
+        modelo.Convertidor v = new modelo.Convertidor();
 
         try {
 
-            //Instancia de la clase Convertidor
-            modelo.Convertidor v = new modelo.Convertidor();
-
             //Se toma el valor del jTxtField y se setea su valor en el atributo 
-            v.setNum(Double.parseDouble(vc.getjTxtgrados().getText()));
-
+            userTemp = Double.parseDouble(vc.getjTxtgrados().getText());
+            
+            v.setNum(userTemp);
+            
+            
             //TODO: Queda hacer la converción y mostrar los JOptionPane
             //de C a F (temp °C × 9/5) + 32
             //de F a C (temp °F − 32) × 5/9
@@ -59,6 +63,7 @@ public class ContrConvertidor {
             comboIndex = vc.getjCbxCambio().getSelectedIndex();
 
             switch (comboIndex) {
+
                 case 1 -> {
                     tempConv = (v.getNum() * 9 / 5) + 32;
                     JOptionPane.showMessageDialog(vc, "La temperatura convertida es: " + df.format(tempConv) + "°F.");
@@ -67,14 +72,12 @@ public class ContrConvertidor {
                     tempConv = (v.getNum() - 32) * 5 / 9;
                     JOptionPane.showMessageDialog(vc, "La temperatura convertida es: " + df.format(tempConv) + "°C.");
                 }
-                default -> {
-                    JOptionPane.showMessageDialog(vc, "Debes elegir una opción.");
-                }
+
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(vc, "Debes ingresar un número.");
         }
     }
 
-    //fin de la clase..
+//fin de la clase..
 }

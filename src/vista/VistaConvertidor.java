@@ -36,7 +36,9 @@ public class VistaConvertidor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTxtgrados = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jCbxCambio = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -69,35 +71,52 @@ public class VistaConvertidor extends javax.swing.JFrame {
                 jTxtgradosKeyTyped(evt);
             }
         });
-        jPanel1.add(jTxtgrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 110, 50));
+        jPanel1.add(jTxtgrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 110, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imgs/dial1 (Personalizado) (1).png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 390));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, 390));
 
-        jCbxCambio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jCbxCambioMouseClicked(evt);
+        jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Convertidor de Temperatura");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, -1));
+
+        jCbxCambio.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jCbxCambio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCbxCambioActionPerformed(evt);
             }
         });
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Haz CLICK en una opción");
 
         javax.swing.GroupLayout jPnlContenedorLayout = new javax.swing.GroupLayout(jPnlContenedor);
         jPnlContenedor.setLayout(jPnlContenedorLayout);
         jPnlContenedorLayout.setHorizontalGroup(
             jPnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
-            .addGroup(jPnlContenedorLayout.createSequentialGroup()
-                .addGap(151, 151, 151)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnlContenedorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jCbxCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(174, 174, 174))
+            .addGroup(jPnlContenedorLayout.createSequentialGroup()
+                .addGap(192, 192, 192)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPnlContenedorLayout.setVerticalGroup(
             jPnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPnlContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jCbxCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,10 +144,10 @@ public class VistaConvertidor extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTxtgradosKeyTyped
 
-    private void jCbxCambioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCbxCambioMouseClicked
+    private void jCbxCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCbxCambioActionPerformed
         // TODO add your handling code here:
         controlador.ContrConvertidor.Convertir();
-    }//GEN-LAST:event_jCbxCambioMouseClicked
+    }//GEN-LAST:event_jCbxCambioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +187,8 @@ public class VistaConvertidor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jCbxCambio;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPnlContenedor;
