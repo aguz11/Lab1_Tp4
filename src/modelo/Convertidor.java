@@ -40,7 +40,6 @@ public class Convertidor {
         double convTemp, tempTrunc;
         //Calculo de temperatura
         convTemp = (n * 9 / 5) + 32;
-
         tempTrunc = formatoNumero(convTemp);
         return tempTrunc;
     }
@@ -48,11 +47,9 @@ public class Convertidor {
     public static double convertirFahrenheit(double n) {
         //Variables a usar
         double convTemp, tempTrunc;
-        //Instancia 
-        DecimalFormat df = new DecimalFormat("#.000");
+        
         //Calculo de temperatura
         convTemp = (n - 32) * 5 / 9;
-        //Tuncar el decimal a 3 dígitos y parseo a tipo
         tempTrunc = formatoNumero(convTemp);
         return tempTrunc;
     }
@@ -63,7 +60,7 @@ public class Convertidor {
 
         DecimalFormatSymbols symbol = new DecimalFormatSymbols();
         symbol.setDecimalSeparator('.');
-        DecimalFormat df = new DecimalFormat("#.000");
+        DecimalFormat df = new DecimalFormat("#.000",symbol);
         numFormateado = Double.parseDouble(df.format(num));
         return numFormateado;
     }
