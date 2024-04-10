@@ -5,6 +5,7 @@
 package modelo;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 /**
  *
@@ -34,28 +35,36 @@ public class Convertidor {
         return "Convertidor{" + "num=" + num + '}';
     }
 
-    public static double convertirCentigrados(double n){
+    public static double convertirCentigrados(double n) {
         //Variables a usar
         double convTemp, tempTrunc;
-        //Instancia 
-        DecimalFormat df = new DecimalFormat("#.000");
         //Calculo de temperatura
-        convTemp = ( n *9/5)+32;
-        //Tuncar el decimal a 3 dígitos y parseo a tipo
-        tempTrunc = Double.parseDouble(df.format(convTemp));
-        return tempTrunc;
-    }
-    
-    public static double convertirFahrenheit(double n){
-        //Variables a usar
-        double convTemp, tempTrunc;
-        //Instancia 
-        DecimalFormat df = new DecimalFormat("#.000");
-        //Calculo de temperatura
-        convTemp = (n - 32) * 5/9;
-        //Tuncar el decimal a 3 dígitos y parseo a tipo
-        tempTrunc = Double.parseDouble(df.format(convTemp));
+        convTemp = (n * 9 / 5) + 32;
+
+        tempTrunc = formatoNumero(convTemp);
         return tempTrunc;
     }
 
+    public static double convertirFahrenheit(double n) {
+        //Variables a usar
+        double convTemp, tempTrunc;
+        //Instancia 
+        DecimalFormat df = new DecimalFormat("#.000");
+        //Calculo de temperatura
+        convTemp = (n - 32) * 5 / 9;
+        //Tuncar el decimal a 3 dígitos y parseo a tipo
+        tempTrunc = formatoNumero(convTemp);
+        return tempTrunc;
+    }
+    
+    //Tuncar los digitos del número
+    public static double formatoNumero(double num) {
+        double numFormateado;
+
+        DecimalFormatSymbols symbol = new DecimalFormatSymbols();
+        symbol.setDecimalSeparator('.');
+        DecimalFormat df = new DecimalFormat("#.000");
+        numFormateado = Double.parseDouble(df.format(num));
+        return numFormateado;
+    }
 }
